@@ -11,9 +11,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class CountryEntity extends ContinentEntity {
+public class CountryEntity {
 
     @Id
+    @GeneratedValue
     UUID countryId;
     String countryName;
     @JoinColumn
