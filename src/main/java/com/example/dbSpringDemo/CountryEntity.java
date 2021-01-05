@@ -25,6 +25,10 @@ public class CountryEntity {
 
     }
 
+    public CountryEntity(String countryName, ContinentEntity continentEntity) {
+
+    }
+
     public UUID getCountryId() {
         return countryId;
     }
@@ -39,5 +43,13 @@ public class CountryEntity {
 
     public void setCountryName(String countryName) {
         this.countryName = countryName;
+    }
+
+    public ContinentEntity getContinentEntity() {
+        return continentEntity;
+    }
+
+    public void setContinentEntity(ContinentEntity continentEntity) {
+        this.continentEntity = continentEntity;
     }
 }
