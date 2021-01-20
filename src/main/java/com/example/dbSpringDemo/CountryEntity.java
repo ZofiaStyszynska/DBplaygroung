@@ -17,8 +17,8 @@ public class CountryEntity {
     @GeneratedValue
     UUID countryId;
     String countryName;
-    @JoinColumn
     @ManyToOne
+    @JoinColumn
     ContinentEntity continentEntity;
 
     public CountryEntity(String countryName) {

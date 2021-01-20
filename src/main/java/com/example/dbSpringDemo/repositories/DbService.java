@@ -23,4 +23,19 @@ public class DbService {
 
         return country.getCountryId();
     }
+
+    public UUID addContinent(ContinentEntity continentEntity){
+        continentEntity = continentRepository.save(new ContinentEntity(null,
+                continentEntity.getContinentName(),
+                countryRepository.findAllByContinentEntity_ContinentName(continentEntity.getContinentName())));
+                return continentEntity.getContinentId();
+    }
+//    public Optional <Country> getCountry(UUID id) {
+//        return countryRepository.findById(id)
+//                //.(Continent::fromContinentEntity)
+//                .map(Country::fromCountryEntity);
+//
+//    }
+
+
 }

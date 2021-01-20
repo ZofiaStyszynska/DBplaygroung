@@ -3,14 +3,13 @@ package com.example.dbSpringDemo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
+import java.util.Set;
 import java.util.UUID;
 
-@Entity
+@Entity (name = "Continent")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +17,12 @@ public class ContinentEntity {
 
     @Id
     @GeneratedValue
-    UUID ContinentId;
+    UUID continentId;
     String continentName;
+    @Column (nullable = true)
+    @OneToMany (mappedBy = "Country")
+    Set<CountryEntity> countryEntities;
+
+
 }
 

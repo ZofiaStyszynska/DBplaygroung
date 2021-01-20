@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.List;
 
+//import static com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormat.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
@@ -21,9 +22,9 @@ public class ReposTest {
     @Autowired
     ContinentRepository continentRepository;
 
-    ContinentEntity europe = new ContinentEntity(null, "Europe");
-    ContinentEntity asia = new ContinentEntity(null, "Asia");
-    ContinentEntity africa = new ContinentEntity(null, "Africa");
+    ContinentEntity europe = new ContinentEntity(null, "Europe",countryRepository.findAllByContinentEntity_ContinentName("Europe"));
+    ContinentEntity asia = new ContinentEntity(null, "Asia",countryRepository.findAllByContinentEntity_ContinentName("Asia"));
+    ContinentEntity africa = new ContinentEntity(null, "Africa",countryRepository.findAllByContinentEntity_ContinentName("Africa"));
 
     @BeforeEach
     void setUpContinents() {
