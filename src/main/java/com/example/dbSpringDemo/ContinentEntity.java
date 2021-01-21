@@ -20,7 +20,7 @@ public class ContinentEntity {
     UUID continentId;
     String continentName;
     @Column (nullable = true)
-    @OneToMany (mappedBy = "Country")
+    @OneToMany
     Set<CountryEntity> countryEntities;
 
 

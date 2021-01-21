@@ -12,6 +12,6 @@ import java.util.UUID;
 
 public interface CountryRepository extends JpaRepository <CountryEntity, UUID>{
 
-Set<CountryEntity> findAllByContinentEntity_ContinentName(String continentName);
+Set<CountryEntity> findCountryEntitiesByContinentEntity_ContinentName(String continentName);
 
 }
